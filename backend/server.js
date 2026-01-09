@@ -1,0 +1,33 @@
+import express from 'express';
+import cors from 'cors';
+import 'dotenv/config.js';
+
+import auth from './src/routes/auth.js'
+import chatbot from './src/routes/chatbot.js'
+import expense from './src/routes/expense.js'
+import summary from './src/routes/summary.js'
+
+const PORT = process.env.PORT || 5000;
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.use('/api/auth', auth);
+app.use('/api/expense', expense);
+app.use('/api/summary', summary);
+app.use('/api/chatbot', chatbot);
+
+app.get('/', (req, res) => {
+    res.send("Expense tracker is running")
+});
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.json({ status: "OK", port: PORT });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+})
