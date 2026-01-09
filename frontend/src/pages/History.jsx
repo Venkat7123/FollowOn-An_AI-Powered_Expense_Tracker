@@ -55,7 +55,6 @@ function History() {
             });
 
             setData(monthExpenses);
-            console.log("Data fetched and updated:", monthExpenses);
         } catch (error) {
             console.error("Error fetching expenses:", error);
         } finally {
@@ -150,7 +149,6 @@ function History() {
                 <ExpenseCard
                     arr={filteredData}
                     onUpdate={() => {
-                        console.log("onUpdate called, refetching data...");
                         setLoading(true);
                         fetchData(selected.month, selected.year);
                     }}

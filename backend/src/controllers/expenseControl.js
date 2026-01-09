@@ -4,10 +4,8 @@ export const addExpense = async (req, res) => {
     try {
         const { userId, amount, title, type, date } = req.body;
 
-        console.log("Add expense request - userId:", userId, "amount:", amount, "title:", title, "type:", type, "date:", date);
 
         if (!userId || !amount || !title || !type || !date) {
-            console.log("Missing required fields");
             return res.status(400).json({ error: "Missing required fields" });
         }
 
@@ -27,7 +25,6 @@ export const addExpense = async (req, res) => {
             return res.status(500).json({ error: error.message });
         }
         
-        console.log("Expense added successfully:", data);
         res.json(data);
     } catch (err) {
         console.error("Add expense exception:", err.message);
@@ -99,7 +96,6 @@ export const updateExpense = async (req, res) => {
             return res.status(500).json({ error: error.message });
         }
 
-        console.log("Expense updated successfully:", data);
         res.json(data);
     } catch (err) {
         console.error("Update expense exception:", err.message);

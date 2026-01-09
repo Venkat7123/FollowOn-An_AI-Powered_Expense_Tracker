@@ -24,13 +24,10 @@ function Login({ onSwitchToSignup }) {
         setmsg("");
 
         try {
-            console.log("Sending login request with:", { email });
             const { data } = await api.post("/api/auth/login", {
                 email,
                 pwd
             });
-
-            console.log("Login response:", data);
 
             if (data && data.user && data.session) {
                 localStorage.setItem("token", data.session.access_token);

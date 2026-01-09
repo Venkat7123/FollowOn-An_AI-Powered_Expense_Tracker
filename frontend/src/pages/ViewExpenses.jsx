@@ -122,7 +122,6 @@ function ViewExpense() {
                 ) : (
                     <ExpenseCard arr={filteredData} 
                     onUpdate={() => {
-                        console.log("onUpdate called, refetching data...");
                         setLoading(true);
                         fetchData();
                     }} />

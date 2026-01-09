@@ -53,7 +53,6 @@ ${expenses.slice(0, 5)
             return res.status(500).json({ error: "API key not configured" });
         }
 
-        console.log("Initializing Google Generative AI with API key length:", apiKey.length);
         const genAI = new GoogleGenerativeAI(apiKey);
         const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
         
@@ -80,10 +79,8 @@ User question: "${message}"
 
 Provide a helpful response based on the user's actual expense data.`;
 
-        console.log("Sending request to Gemini API with expense data...");
         const result = await model.generateContent(prompt);
         const response = result.response.text();
-        console.log("Chatbot response generated successfully");
         res.json({ reply: response });
     }
     catch (err) {

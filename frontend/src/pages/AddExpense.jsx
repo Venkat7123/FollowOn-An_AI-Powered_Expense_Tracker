@@ -47,9 +47,7 @@ function AddExpense() {
                 date: new Date().toISOString().split('T')[0]
             }
 
-            console.log("Sending expense data:", expenseData);
             const response = await api.post(`/api/expense/addExpense`, expenseData);
-            console.log("Add expense response:", response.data);
             
             setTitle("");
             setAmount("");

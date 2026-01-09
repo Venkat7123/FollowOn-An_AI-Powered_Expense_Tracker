@@ -127,9 +127,14 @@ export default function Barchart() {
                     {data.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
                     ))}
-                    {!isMobile && (
-                        <LabelList dataKey="Expense" position="top" formatter={(val) => `₹ ${val}`} />
-                    )}
+                    <LabelList 
+                        dataKey="Expense" 
+                        position="top" 
+                        angle={isMobile ? -90 : 0}
+                        fontSize={isMobile ? 11 : 14}
+                        offset={isMobile ? 15 : 10}
+                        formatter={(val) => `₹${val}`} 
+                    />
                 </Bar>
             </BarChart>
         </ResponsiveContainer>

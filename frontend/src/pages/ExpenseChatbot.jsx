@@ -23,7 +23,6 @@ export default function ExpenseChatbotButton({ userId }) {
   const sendMessage = async () => {
     if (!input.trim()) return;
 
-    console.log("Sending message with userId:", userId);
 
     const userMsg = { role: "user", text: input };
     setMessages([...messages, userMsg]);
@@ -31,21 +30,18 @@ export default function ExpenseChatbotButton({ userId }) {
     setLoading(true);
 
     try {
-      console.log("Fetching from:", "http://localhost:5000/api/chatbot/chat");
-      const res = await fetch("http://localhost:5000/api/chatbot/chat", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/chatbot/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input, userId: userId || "unknown" }),
       });
 
-      console.log("Response status:", res.status, res.statusText);
 
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
 
       const data = await res.json();
-      console.log("Chat response data:", data);
       
       const botMsg = { role: "bot", text: data.reply || "No response from bot" };
       setMessages((prev) => [...prev, botMsg]);

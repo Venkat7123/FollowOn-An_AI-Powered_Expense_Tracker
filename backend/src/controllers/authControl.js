@@ -35,8 +35,6 @@ export const login = async (req, res) => {
     try {
         const { email, pwd } = req.body;
 
-        console.log("Login attempt for:", email);
-
         if (!email || !pwd) {
             return res.status(400).json({ error: "Email and password are required" });
         }
@@ -55,8 +53,6 @@ export const login = async (req, res) => {
             console.error("No user or session returned from Supabase");
             return res.status(401).json({ error: "Invalid credentials" });
         }
-
-        console.log("Login successful for user:", data.user.id);
         res.json(data);
     } catch (err) {
         console.error("Login exception:", err.message);

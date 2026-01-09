@@ -22,14 +22,12 @@ function SignUp({ onSwitchToLogin }) {
         setmsg("");
 
         try {
-            console.log("Sending signup request with:", { email, name });
             const { data } = await api.post("/api/auth/signup", {
                 email,
                 pwd,
                 name
             });
 
-            console.log("Signup response:", data);
 
             if (data) {
                 setmsg("Sign Up Successful! Please Login...");
