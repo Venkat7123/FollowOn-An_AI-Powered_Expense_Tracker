@@ -16,7 +16,7 @@ function HomePage() {
     
     return (
         <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden px-4">
-            <img src="frontend/pages/assets/bg.png"
+            <img src="/bg.png"
                 className="absolute z-0 w-full min-h-screen object-cover brightness-50"
                 alt="FollowOn Background Image" />
             <div className="relative z-10 text-center flex-column">
