@@ -1,6 +1,6 @@
 export default function MoneySpinner() {
   return (
-    <div className="flex justify-center items-center h-screen pl-60 bg-gray-950">
+    <div className="flex justify-center items-center h-screen pl-0 md:pl-60 bg-gray-950">
       <div className="relative w-24 h-24">
         {/* Spinning coin ring */}
         <svg

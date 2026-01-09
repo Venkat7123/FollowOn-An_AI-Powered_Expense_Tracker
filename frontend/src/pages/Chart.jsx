@@ -21,7 +21,7 @@ function Chart() {
                     <Piechart />
                 </div>
                 <h1 className="text-2xl text-center p-2 md:p-3 font-bold">Monthly Expense Trend</h1>
-                <div className="p-2 md:p-3 overflow-x-auto mt-4 md:mt-6">
+                <div className="md:p-3 overflow-x-auto mt-4 md:mt-6">
                     <Barchart />
                 </div>
             </div>
