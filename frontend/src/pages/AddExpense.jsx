@@ -48,7 +48,7 @@ function AddExpense() {
             }
 
             console.log("Sending expense data:", expenseData);
-            const response = await api.post("/api/expense/addExpense", expenseData);
+            const response = await api.post(`/api/expense/addExpense`, expenseData);
             console.log("Add expense response:", response.data);
             
             setTitle("");

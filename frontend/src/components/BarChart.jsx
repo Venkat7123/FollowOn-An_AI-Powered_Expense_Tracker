@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Cell, ResponsiveContainer, LabelList } from 'recharts';
-import api from '../src/api';
+import api from '../api';
 
 export default function Barchart() {
     const [data, setData] = useState([]);

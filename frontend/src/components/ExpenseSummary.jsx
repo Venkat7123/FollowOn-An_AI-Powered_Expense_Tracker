@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SummaryCard from "./SummaryCard";
 import MoneySpinner from "./Loading";
-import api from "../src/api";
+import api from "../api";
 
 export const categoryIcons = {
     "Housing / Living": "🏠",
