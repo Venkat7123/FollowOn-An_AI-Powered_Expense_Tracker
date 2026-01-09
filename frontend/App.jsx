@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import Navbar from "./frontend/components/Navbar";
-import HomePage from "./frontend/pages/Homepage";
-import AuthPage from "./frontend/pages/AuthPage";
-import Dashboard from "./frontend/pages/Dashboard";
-import AddExpense from "./frontend/pages/AddExpense";
-import ViewExpense from "./frontend/pages/ViewExpenses";
-import Chart from "./frontend/pages/Chart";
-import History from "./frontend/pages/History";
-import ExpenseChatbotButton from "./frontend/pages/ExpenseChatbot";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/Homepage";
+import AuthPage from "./pages/AuthPage";
+import Dashboard from "./pages/Dashboard";
+import AddExpense from "./pages/AddExpense";
+import ViewExpense from "./pages/ViewExpenses";
+import Chart from "./pages/Chart";
+import History from "./pages/History";
+import ExpenseChatbotButton from "./pages/ExpenseChatbot";
 import { useState, useEffect } from "react";
 
 // Helper function to check if user is authenticated
