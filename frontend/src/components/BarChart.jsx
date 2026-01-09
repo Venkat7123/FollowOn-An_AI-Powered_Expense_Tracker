@@ -88,11 +88,25 @@ export default function Barchart() {
     };
 
     return (
-        <ResponsiveContainer width="100%" height={isMobile ? 300 : 500}>
-            <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-
-                <XAxis dataKey="month" />
-                <YAxis />
+        <ResponsiveContainer width="100%" height={isMobile ? 280 : 500}>
+            <BarChart 
+                data={data} 
+                margin={isMobile 
+                    ? { top: 15, right: 10, left: -10, bottom: 50 } 
+                    : { top: 20, right: 30, left: 20, bottom: 5 }
+                }
+            >
+                <XAxis 
+                    dataKey="month" 
+                    tick={{ fontSize: isMobile ? 10 : 12 }}
+                    angle={isMobile ? -45 : 0}
+                    textAnchor={isMobile ? "end" : "middle"}
+                    interval={0}
+                />
+                <YAxis 
+                    tick={{ fontSize: isMobile ? 10 : 12 }}
+                    width={isMobile ? 40 : 60}
+                />
                 <Tooltip
                     contentStyle={{
                         backgroundColor: "#1f2937",
@@ -101,21 +115,21 @@ export default function Barchart() {
                         color: "white",
                         boxShadow: "0px 2px 8px rgba(0,0,0,0.3)",
                         padding: "5px",
-                        fontSize: "14px"
+                        fontSize: isMobile ? "12px" : "14px"
                     }}
                     itemStyle={{ color: "white" }}
                     labelFormatter={(label, payload) =>
                         payload?.[0]?.payload?.fullMonth
                     }
                     formatter={(value) => `₹${value}`}
-
                 />
                 <Bar dataKey="Expense">
-
                     {data.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
                     ))}
-                    <LabelList dataKey="Expense" position="top" formatter={(val) => `₹ ${val}`} />
+                    {!isMobile && (
+                        <LabelList dataKey="Expense" position="top" formatter={(val) => `₹ ${val}`} />
+                    )}
                 </Bar>
             </BarChart>
         </ResponsiveContainer>
