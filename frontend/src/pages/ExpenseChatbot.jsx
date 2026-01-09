@@ -55,12 +55,12 @@ export default function ExpenseChatbotButton({ userId }) {
   };
 
   return (
-    <div className="fixed bottom-4 right-4">
+    <div className="fixed bottom-4 right-4 left-4 md:left-auto z-50">
       {/* Button to open/close */}
       {!open && (
         <button
           onClick={toggleChat}
-          className="bg-green-500 cursor-pointer text-white px-4 py-3 rounded-full shadow-lg hover:bg-green-600 transition"
+          className="bg-green-500 cursor-pointer text-white px-4 py-3 rounded-full shadow-lg hover:bg-green-600 transition ml-auto block"
         >
           <i className="fa-solid fa-robot"></i>
         </button>
@@ -68,7 +68,7 @@ export default function ExpenseChatbotButton({ userId }) {
 
       {/* Chat Window */}
       {open && (
-        <div className="w-100 h-120 bg-gray-900 text-white rounded-2xl shadow-lg flex flex-col">
+        <div className="w-full md:w-100 h-[70vh] md:h-120 bg-gray-900 text-white rounded-2xl shadow-lg flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-center bg-gray-800 px-4 py-2 rounded-t-2xl">
             <span>Track AI</span>
