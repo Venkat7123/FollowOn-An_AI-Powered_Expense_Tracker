@@ -71,7 +71,7 @@ export default function ExpenseChatbotButton({ userId }) {
         <div className="w-100 h-120 bg-gray-900 text-white rounded-2xl shadow-lg flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-center bg-gray-800 px-4 py-2 rounded-t-2xl">
-            <span>Expense Chatbot</span>
+            <span>Track AI</span>
             <button onClick={toggleChat} className="text-white text-xl font-bold cursor-pointer"><i className="fa-solid fa-xmark"></i></button>
           </div>
 
