@@ -74,7 +74,7 @@ export default function ExpenseSummary() {
     }
 
     return (
-        <div>
+        <div className="bg-gray-950">
             <h1 className="text-xl font-bold text-white">Monthly Expense Summary</h1>
             <div className="mt-5 grid grid-cols-[repeat(auto-fit,minmax(300px,3fr))] gap-3 ">
                 {summary.map((item, idx) => (

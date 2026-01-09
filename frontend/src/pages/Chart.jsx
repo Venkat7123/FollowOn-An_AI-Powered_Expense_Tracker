@@ -15,7 +15,7 @@ function Chart() {
     }
     return (
         <div className="bg-gray-950 min-h-screen">
-            <div className="ml-20 md:ml-60 text-white p-2 md:p-5">
+            <div className="md:pt-10 pt-20 md:ml-60 text-white p-2 md:p-5">
                 <h1 className="text-2xl font-bold p-2 md:p-3">Chart View</h1>
                 <div className="p-2 md:p-3 mb-4 md:mb-6">
                     <Piechart />

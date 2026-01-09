@@ -67,7 +67,7 @@ function AddExpense() {
     }
     return (
         <div className="min-h-screen bg-gray-950">
-            <div className="ml-20 md:ml-60 text-white p-2 md:p-6">
+            <div className="md:pt-10 pt-20 md:ml-60 text-white p-2 md:p-6">
                 <h1 className="text-2xl font-bold p-2 md:p-6">Add Monthly Expenses</h1>
                 <form onSubmit={handleSubmit} className="border rounded-lg p-3 md:p-5 m-2 md:m-5 space-y-7 flex flex-col">
                     <div>
