@@ -149,7 +149,7 @@ export default function Sidebar() {
 
   // Desktop Sidebar
   return (
-    <div className="fixed left-0 top-0 h-full w-60 text-white flex flex-col items-start p-10 space-y-6 shadow-lg z-40">
+    <div className="fixed left-0 top-0 h-full w-65 text-white bg-gray-900 flex flex-col items-start p-7 pl-10 space-y-6 shadow-lg z-40">
       <h1 className="font-bold text-2xl">
         <Link to="/">
           <span className="text-gray-600">Follow</span>
