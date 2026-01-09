@@ -5,7 +5,10 @@ The application not only tracks expenses but also provides **visual analytics an
 
 This project is built using **modern web technologies** with a clean UI, secure authentication, and scalable backend architecture.
 
+🌐 Try this out: https://followon.vercel.app/
+
 ---
+
 
 ## 🎯 Project Objective
 
@@ -77,10 +80,7 @@ FollowOn/│
 │ ├── src/
 │ │ ├── config/
 │ │ ├── controllers/
-│ │ ├── middleware/
 │ │ ├── routes/
-│ │ └── services/
-│ │
 │ ├── .env
 │ ├── package.json
 │ ├── package-lock.json
@@ -92,9 +92,9 @@ FollowOn/│
 │ ├── pages/
 │ ├── api.js
 │ ├── App.jsx
-├── index.jsx
+| ├── index.jsx
+| ├── index.css
 ├── index.html
-├── index.css
 ├── package.json
 └── package-lock.json
 ```
@@ -161,3 +161,4 @@ npm run dev
 This project is licensed under the ISC License.
 
 ---
+
