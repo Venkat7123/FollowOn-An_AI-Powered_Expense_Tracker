@@ -96,7 +96,7 @@ function History() {
     }
     return (
         <div className="bg-gray-950 min-h-screen">
-            <div className="md:pt-10 pt-20 md:ml-60 text-white p-2 md:p-5">
+            <div className="md:pt-10 pt-20 md:ml-64 text-white p-2 md:p-5">
                 <h1 className="text-2xl font-bold">All Expenses</h1>
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-2 m-2 md:m-5 flex-wrap">
                     <div className="w-full md:w-auto">

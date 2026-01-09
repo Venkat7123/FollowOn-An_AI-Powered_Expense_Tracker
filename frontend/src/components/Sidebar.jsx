@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SummaryNav from "./SummaryNav";
 
@@ -7,6 +7,9 @@ export default function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   // Handle window resize
   useEffect(() => {
@@ -71,7 +74,7 @@ export default function Sidebar() {
             <div className="px-4 pb-4 space-y-3 border-t border-gray-700">
               <Link
                 to="/dashboard"
-                className="flex items-center space-x-3 hover:text-green-400 py-2"
+                className={`flex items-center space-x-3 py-2 ${isActive('/dashboard') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
                 onClick={() => setIsExpanded(false)}
               >
                 <span className="text-xl text-green-500"><i className="fa-solid fa-house"></i></span>
@@ -80,7 +83,7 @@ export default function Sidebar() {
 
               <Link
                 to="/add"
-                className="flex items-center space-x-3 hover:text-green-400 py-2"
+                className={`flex items-center space-x-3 py-2 ${isActive('/add') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
                 onClick={() => setIsExpanded(false)}
               >
                 <span className="text-xl text-green-500"><i className="fa-solid fa-plus"></i></span>
@@ -89,7 +92,7 @@ export default function Sidebar() {
 
               <Link
                 to="/expense"
-                className="flex items-center space-x-3 hover:text-green-400 py-2"
+                className={`flex items-center space-x-3 py-2 ${isActive('/expense') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
                 onClick={() => setIsExpanded(false)}
               >
                 <span className="text-xl text-green-500"><i className="fa-solid fa-coins"></i></span>
@@ -98,7 +101,7 @@ export default function Sidebar() {
 
               <Link
                 to="/history"
-                className="flex items-center space-x-3 hover:text-green-400 py-2"
+                className={`flex items-center space-x-3 py-2 ${isActive('/history') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
                 onClick={() => setIsExpanded(false)}
               >
                 <span className="text-xl text-green-500"><i className="fa-solid fa-landmark"></i></span>
@@ -107,7 +110,7 @@ export default function Sidebar() {
 
               <Link
                 to="/view"
-                className="flex items-center space-x-3 hover:text-green-400 py-2"
+                className={`flex items-center space-x-3 py-2 ${isActive('/view') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
                 onClick={() => setIsExpanded(false)}
               >
                 <span className="text-xl text-green-500"><i className="fa-solid fa-chart-line"></i></span>
@@ -159,7 +162,7 @@ export default function Sidebar() {
 
       <Link
         to="/dashboard"
-        className="flex items-center space-x-3 hover:text-green-400 w-full"
+        className={`flex items-center space-x-3 w-full ${isActive('/dashboard') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
         title="Dashboard"
       >
         <span className="text-xl text-green-500"><i className="fa-solid fa-house"></i></span>
@@ -168,7 +171,7 @@ export default function Sidebar() {
 
       <Link
         to="/add"
-        className="flex items-center space-x-3 hover:text-green-400 w-full"
+        className={`flex items-center space-x-3 w-full ${isActive('/add') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
         title="Add Expenses"
       >
         <span className="text-xl text-green-500"><i className="fa-solid fa-plus"></i></span>
@@ -177,7 +180,7 @@ export default function Sidebar() {
 
       <Link
         to="/expense"
-        className="flex items-center space-x-3 hover:text-green-400 w-full"
+        className={`flex items-center space-x-3 w-full ${isActive('/expense') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
         title="View Expenses"
       >
         <span className="text-xl text-green-500"><i className="fa-solid fa-coins"></i></span>
@@ -186,7 +189,7 @@ export default function Sidebar() {
 
       <Link
         to="/history"
-        className="flex items-center space-x-3 hover:text-green-400 w-full"
+        className={`flex items-center space-x-3 w-full ${isActive('/history') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
         title="History"
       >
         <span className="text-xl text-green-500"><i className="fa-solid fa-landmark"></i></span>
@@ -195,7 +198,7 @@ export default function Sidebar() {
 
       <Link
         to="/view"
-        className="flex items-center space-x-3 hover:text-green-400 w-full"
+        className={`flex items-center space-x-3 w-full ${isActive('/view') ? 'text-green-400 font-semibold' : 'hover:text-green-400'}`}
         title="Chart"
       >
         <span className="text-xl text-green-500"><i className="fa-solid fa-chart-line"></i></span>

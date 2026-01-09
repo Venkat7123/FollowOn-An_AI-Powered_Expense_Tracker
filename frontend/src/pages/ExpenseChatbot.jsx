@@ -76,7 +76,7 @@ export default function ExpenseChatbotButton({ userId }) {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-2 space-y-2">
+          <div className="flex-1 overflow-y-auto p-2 space-y-2 chatbot-scrollbar">
             {messages.map((msg, i) => (
               <div
                 key={i}

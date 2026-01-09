@@ -79,7 +79,7 @@ function ViewExpense() {
 
     return (
         <div className="bg-gray-950 min-h-screen">
-            <div className="md:pt-10 pt-20 md:ml-60 text-white p-2 md:p-5">
+            <div className="md:pt-10 pt-20 md:ml-64 text-white p-2 md:p-5">
                 <h1 className="text-2xl font-bold">All Expenses</h1>
 
                 <div className="flex flex-col md:flex-row gap-2 md:gap-4 m-2 md:m-4 justify-end ">
