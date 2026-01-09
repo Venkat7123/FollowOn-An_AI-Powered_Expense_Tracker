@@ -1,14 +1,15 @@
 import express from 'express';
 import cors from 'cors';
-import 'dotenv/config.js';
+import dotenv from "dotenv";
+dotenv.config();
+
 
 import auth from './src/routes/auth.js'
 import chatbot from './src/routes/chatbot.js'
 import expense from './src/routes/expense.js'
 import summary from './src/routes/summary.js'
 
-const PORT = process.env.PORT || 5000;
-
+const PORT = "https://followon-backend.onrender.com";
 const app = express();
 
 app.use(cors());
