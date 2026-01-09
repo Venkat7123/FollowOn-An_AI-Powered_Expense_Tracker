@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://followon-backend.onrender.com',
+    baseURL: process.env.BACKEND_URL,
 })
 
 export default api;
